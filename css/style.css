@@ -1,0 +1,198 @@
+:root{
+    --color1:#00b4d8;
+    --color2:#dff6ff;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+* img {
+    width: 100%;
+}
+
+
+
+body{
+    background-image: url(../image/bg_1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    position: relative;
+    width: 400px;
+    /* height: 105px; */
+    background: #fff;
+    padding: 15px 20px;    border-radius: 18px;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.6s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .search_box {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.container .search_box .location {
+    font-size: 22px;
+}
+.container .search_box input {
+    color: #06283D;
+    width: 80%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 15px;
+    outline: none;
+    border: none;
+}
+.container .search_box input::placeholder {
+    font-size: 20px;
+    font-weight: 500;
+    color: #06283D;
+    text-transform: capitalize;
+}
+.container .search_box button {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+}
+.container .search_box button .search {
+    font-size: 20px;
+}
+.container .search_box button:hover {
+    background-color: var(--color1);
+    color: #fff;
+}
+
+/* Start content */
+/* ------------------------------------------------- */
+.hero {
+    display: none;  /* Hidden initially */
+    transform: translateY(-100px); /* Start from above the viewport */
+    opacity: 0;      /* Start with no opacity */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transform and opacity transition */
+}
+.hero.show {
+    display: block;   /* Make it visible */
+    transform: translateY(0); /* Move to its normal position */
+    opacity: 1;      /* Fade in */
+}
+.hero .result_box .image  {
+    width: 300px;
+    text-align: center;
+}
+.hero .result_box .image img {
+    width: 200px;
+}
+.hero .result_box .search_current {
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+.hero .result_box .temperature {
+    margin: 20px 0 10px 0;
+    text-align: center;
+    position: relative;
+}
+.hero .result_box .temperature h3 {
+    font-size: 70px;
+    font-weight: bold;
+}
+/* .hero .result_box .temperature span {
+    position: absolute;
+    color: var(--color1);
+    top: -10px;
+    right: 35%;
+    transform: translateX(50%);
+    font-size: 20px;
+} */
+.hero .result_box .statues {
+    text-align: center;
+}
+.hero .result_box .condition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.hero .result_box .condition .humidity {
+    display: flex;
+    align-items: center;
+}
+.hero .result_box .condition .humidity img {
+    width: 40px;
+    margin: 0 15px 0 0;
+}
+.hero .result_box .condition .humidity .condition_box {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+}
+.hero .result_box .condition .humidity .condition_box span {
+    margin: 5px 0;
+}
+.hero .result_box .condition .wind {
+    display: flex;
+    align-items: center;
+}
+.hero .result_box .condition .wind img {
+    width: 40px;
+    margin: 0 15px 0 0;
+}
+.hero .result_box .condition .wind .wind_box {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* Style of error */
+.error {
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    background-color: rgba(245, 27, 27, 0.547);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid red;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    display: none;
+}
+.error p {
+    font-size: 14px;
+    color: #fff;
+}
+.show_error{
+    display: block;
+    opacity: 1;
+}
+
+
+
+/* Media */
+@media (max-width :992px){
+    .container{
+        width: 87%;
+        margin: auto;
+    }
+}
